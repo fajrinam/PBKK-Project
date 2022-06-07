@@ -16,14 +16,10 @@ class FormController extends Controller
     {
         $this->validate($request,[
            'nama' => 'required|min:5|max:20',
-           'nrp' => 'required|numeric|min:5',
-           'usia' => 'required|numeric',
-           'alamat' => 'required|min:3|max:50',
-           'noHp' => 'required|numeric|min:3',
-           'gambar' => 'required'
+           'pekerjaan' => 'required|alpha',
+           'usia' => 'required|numeric'
         ]);
- 
+ 		
         return view('proses',['data' => $request]);
-        return redirect('/input')->withSuccess('Data berhasil disimpan!');
     }
 }
